@@ -1,18 +1,19 @@
 import './App.css';
-import { Route,   Routes } from 'react-router-dom';
-import Navbar from './component/navbar';
-import Stories from './component/stories';
+import { BrowserRouter, Route,   Routes } from 'react-router-dom';
+import Navbar from './components/navbar';
+import Stories from './components/stories';
 
 function App() {
   return (
     <>
-    <Navbar/>
-    <Routes>
-      <Route exact path = "/" element={Stories} />
-      <Route exact path = "/favourties" element={Stories} />
-    </Routes>
+      <Navbar/>
+      <Routes>
+        <Route exact path="/" element={<Stories />} />
+        <Route exact path="/favourites" element={<Stories />} />
+      </Routes>
     </>
   );
+
 }
 
 export default App;

@@ -8,9 +8,17 @@
   height: 100%;
 }
 
+.title-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.title-container svg {
+  width: 18%;
+}
 .navbar {
   height: 60px;
-  background-color: hsl(155, 45%, 41%);
+  background-color: #3a9870;
   position: relative;
 }
 
