@@ -29,6 +29,14 @@
     transition: 0.3s;
 }
 
+.story-content .icon-button {
+    border: none;
+    width: 0px;
+    height: 0px;
+    background: none;
+    cursor: pointer;
+}
+
 .story-content .btn:hover {
     transform: scale(1.1);
 }

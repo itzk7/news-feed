@@ -1,3 +1,3 @@
 import { createContext } from 'react';
 
-export const FavouriteContext = createContext([]);
+export const FavoriteIDsContext = createContext([]);
