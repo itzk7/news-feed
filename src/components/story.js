@@ -13,7 +13,6 @@ export const Story = (props) => {
     const [favIds, setFavIds] = useContext(FavoriteIDsContext)
     const [isFav, setIsFav] = useState();
     useEffect(() => {
-        console.log("ok", props)
         GetItemById(props.storyId)
         .then(res => {
             const s = res.data
@@ -32,14 +31,8 @@ export const Story = (props) => {
     }
 
     const addToFav = (id) => {
-        // var idx = favIds.indexOf(id)
-        // if (idx === -1) {
-        //     idx = 0
-        // }
-
-        // favIds.splice(idx, 0, id)
-        favIds.push(id)
-        setFavIds(favIds)
+        const newIds = [].concat(favIds, id)
+        setFavIds(newIds)
         setIsFav(!isFav)
     }
 

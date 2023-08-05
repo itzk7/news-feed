@@ -2,17 +2,19 @@ import {NavLink} from 'react-router-dom'
 import './navbar.css'
 import {ReactComponent as Hamburger} from '../img/hamburger.svg';
 import {ReactComponent as BatmanLogo} from '../img/batman.svg';
-import { useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { FavoriteIDsContext } from './context';
 
 const Navbar = () => {
     const [showNavbar, setShowNavbar] = useState(false);
-
+    const [favIds] = useContext(FavoriteIDsContext)
     const handleShowNavbar = () => {
       setShowNavbar(!showNavbar);
     };
 
-    return (
+    useEffect(() => console.log("seri da", favIds), [favIds])
 
+    return (
         <nav className="navbar">
             <div className="container">
                 <div className='title-container'>
@@ -31,7 +33,7 @@ const Navbar = () => {
                         </li>
                         <li>
                             <NavLink to = "/favorites">
-                                Favourites
+                                Favourites ({favIds.length})
                             </NavLink>
                         </li>
                         <li>

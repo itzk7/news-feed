@@ -1,21 +1,27 @@
 import './App.css';
-import { Route,   Routes } from 'react-router-dom';
+import { Route,   Routes, BrowserRouter } from 'react-router-dom';
 import Navbar from './components/navbar';
 import Stories from './components/stories';
 import FavoriteStories from './components/favourites';
-import ContextLayout from './ContextLayout';
+import { FavoriteIDsContext } from './components/context';
+import { useState } from 'react';
 
 function App() {
+  const [favIds, setFavIds] = useState([])
   return (
-    <div className='main'>
-        <Navbar/>
-        <Routes>
-          <Route element={<ContextLayout />}>
-            <Route exact path="/" element={<Stories />} />
-            <Route exact path="/favorites" element={<FavoriteStories />} />
-          </Route>
-        </Routes>
-    </div>
+    <>
+    <FavoriteIDsContext.Provider value={[favIds, setFavIds]}>
+          <BrowserRouter>
+          <Navbar/>
+            <div className='main'>
+              <Routes>
+                  <Route exact path="/" element={<Stories />} />
+                  <Route exact path="/favorites" element={<FavoriteStories />} />
+              </Routes>
+            </div>
+          </BrowserRouter>
+    </FavoriteIDsContext.Provider>
+    </>
   );
 
 }
