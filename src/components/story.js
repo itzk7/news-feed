@@ -23,16 +23,24 @@ export const Story = (props) => {
         .catch(err => console.log("something went wrong", err))
     }, [props])
 
-    useEffect(() => setIsFav(favIds.has(props.storyId)), [props, favIds])
+    useEffect(() => setIsFav(favIds.includes(props.storyId)), [props, favIds])
 
     const removeFromFav = (id) => {
-        favIds.delete(id)
-        setFavIds(favIds)
+        const filteredIDs = favIds.filter(i => i !== id)
+        setFavIds(filteredIDs)
+        setIsFav(!isFav)
     }
 
     const addToFav = (id) => {
-        favIds.add(id)
+        // var idx = favIds.indexOf(id)
+        // if (idx === -1) {
+        //     idx = 0
+        // }
+
+        // favIds.splice(idx, 0, id)
+        favIds.push(id)
         setFavIds(favIds)
+        setIsFav(!isFav)
     }
 
     return (
@@ -43,7 +51,7 @@ export const Story = (props) => {
             {isFav && <button className='icon-button' onClick={ () => removeFromFav(story.id)}>
                 <FavLogo />
             </button>}
-            {isFav && <button className='icon-button' onClick={() => addToFav(story.id)}>
+            {!isFav && <button className='icon-button' onClick={() => addToFav(story.id)}>
                 <NotFavLogo />
             </button> }
             <div className="story-meta">

@@ -3,7 +3,7 @@ import { FavoriteIDsContext } from './components/context';
 import { useState } from 'react';
 
 const ContextLayout = () => {
-  const [favIds, setFavIds] = useState(() => new Set())
+  const [favIds, setFavIds] = useState([])
 
   return (
     <FavoriteIDsContext.Provider value={[favIds, setFavIds]}>
