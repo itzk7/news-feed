@@ -1,8 +1,9 @@
 import HackerNewsClient from "./client"
 
-const GetTopStories = async () => {
-    const response = await HackerNewsClient.get("/topstories.json")
-    return response
+export const GetTopStoryIds = async () => {
+    return await HackerNewsClient.get("/topstories.json")
 }
 
-export default GetTopStories
+export const GetItemById = async (id) => {
+    return await HackerNewsClient.get(`/item/${id}.json?print=pretty`)
+}

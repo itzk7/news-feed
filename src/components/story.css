@@ -1,0 +1,39 @@
+.story-container {
+    width: 80%;
+    background: #fff;
+    border: 1px solid #ccc;
+    margin-bottom: 50px;
+    transition: 0.3s;
+}
+
+.story-content {
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.story-meta {
+    font-style: italic;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.story-content .btn{
+    display: block;
+    color: #fff;
+    text-align: center;
+    background: linear-gradient(to right, #d4a4d4, #6f9d70);
+    text-decoration: none;
+    margin-top: 30px;
+    padding: 10px 5px;
+    transition: 0.3s;
+}
+
+.story-content .btn:hover {
+    transform: scale(1.1);
+}
+
+.story-container:hover {
+    transform: scale(1);
+    box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.25);
+}
