@@ -1,7 +1,7 @@
 import './stories.css'
 import { useEffect, useState } from "react"
 import {GetTopStoryIds} from '../http/hackernews';
-import { Story } from './story';
+import  Story  from './story';
 
 
 const Stories = () => {

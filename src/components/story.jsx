@@ -8,13 +8,14 @@ import {ReactComponent as FavLogo} from '../img/fav-selected.svg';
 import { FavoriteIDsContext } from './context';
 
 
-export const Story = (props) => {
+const Story = (props) => {
     const [story, setStory] = useState({});
     const [favIds, setFavIds] = useContext(FavoriteIDsContext)
     const [isFav, setIsFav] = useState();
     useEffect(() => {
         GetItemById(props.storyId)
         .then(res => {
+            console.log(res.data)
             setStory(res.data)
         })
         .catch(err => console.log("something went wrong", err))
@@ -57,3 +58,5 @@ export const Story = (props) => {
     </div>
     )
 }
+
+export default Story

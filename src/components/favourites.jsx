@@ -1,6 +1,6 @@
 import './stories.css'
 import { useContext} from "react"
-import { Story } from './story';
+import Story from './story';
 import { FavoriteIDsContext } from './context';
 
 
