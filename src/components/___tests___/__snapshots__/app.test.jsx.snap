@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Jest Snapshot testing suite Matches DOM Snapshot 1`] = `
+<DocumentFragment>
+  <nav
+    class="navbar"
+  >
+    <div
+      class="container"
+    >
+      <div
+        class="title-container"
+      >
+        <svg>
+          batman.svg
+        </svg>
+        <h2>
+          Wayne enterprise
+        </h2>
+      </div>
+      <div
+        class="menu-icon"
+      >
+        <svg>
+          hamburger.svg
+        </svg>
+      </div>
+      <div
+        class="nav-elements  false"
+      >
+        <ul>
+          <li>
+            <a
+              aria-current="page"
+              class="active"
+              href="/"
+            >
+              Stories
+            </a>
+          </li>
+          <li>
+            <a
+              class=""
+              href="/favorites"
+            >
+              Favourites (0)
+            </a>
+          </li>
+          <li>
+            <a
+              class=""
+              href="/about"
+            >
+              About
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div
+    class="main"
+  >
+    <div
+      class="stories-container"
+    >
+      <h1>
+        Top stories
+      </h1>
+    </div>
+    <div
+      class="stories-container"
+    >
+      <div
+        class="story-container"
+      >
+        <div
+          class="story-content"
+        >
+          <a
+            class="story-title"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Story 1
+          </a>
+          <p>
+            - By,  Steve Rogers 
+          </p>
+          <div
+            class="story-meta"
+          >
+            <p>
+              🗓 August 6th 2023, 🕒 1:36:52 pm
+            </p>
+            <p>
+              💬 Comments (100)
+            </p>
+            <button
+              class="icon-button"
+            >
+              <svg>
+                fav-not-selected.svg
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

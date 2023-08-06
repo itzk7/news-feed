@@ -24,7 +24,7 @@ afterEach(() => server.resetHandlers())
 afterAll(() => server.close())
 
 
-test ('should able to get data and paint it', async () => {
+test ('should able to get data and paint it in story comp', async () => {
     var favIds = []
     const setFavIds = () => {}
     render(

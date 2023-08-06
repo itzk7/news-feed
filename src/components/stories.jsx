@@ -21,7 +21,7 @@ const Stories = () => {
             <h1>Top stories</h1>
         </div>
         <div className='stories-container'>
-            {storyIds.map(id => <Story storyId = {id}/>)}
+            {storyIds.map(id => <Story key = {id} storyId = {id}/>)}
         </div>
         </>
     )
