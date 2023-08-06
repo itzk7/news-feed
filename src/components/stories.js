@@ -10,8 +10,7 @@ const Stories = () => {
     useEffect(() => {
         GetTopStoryIds()
         .then(res => {
-            setStoryIds(res.data.slice(0,20))
-            // setStoryIds(res.data)
+            setStoryIds(res.data)
         })
         .catch(err => console.log("something went wrong", err))
     }, [])

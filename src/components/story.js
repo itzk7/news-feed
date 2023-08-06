@@ -15,8 +15,6 @@ export const Story = (props) => {
     useEffect(() => {
         GetItemById(props.storyId)
         .then(res => {
-            const s = res.data
-            s.favorite = 
             setStory(res.data)
         })
         .catch(err => console.log("something went wrong", err))
@@ -39,18 +37,22 @@ export const Story = (props) => {
     return (
     <div className = 'story-container'>
         <div className = "story-content">
-            <p>{story.title}</p>
-            <p>By {story.by}</p>
-            {isFav && <button className='icon-button' onClick={ () => removeFromFav(story.id)}>
-                <FavLogo />
-            </button>}
-            {!isFav && <button className='icon-button' onClick={() => addToFav(story.id)}>
-                <NotFavLogo />
-            </button> }
+            <a className='story-title' href={story.url} target="_blank" rel="noreferrer">
+                {story.title}
+            </a>
+            <p>- By,  {story.by} </p>
             <div className="story-meta">
-                <p>{formatUnixTime(story.time)},  Comments({story.descendants})</p>
+                <p>{formatUnixTime(story.time)}</p>
+                <p>💬 Comments ({story.descendants})</p>
+                <>
+                {isFav && <button className='icon-button' onClick={ () => removeFromFav(story.id)}>
+                            <FavLogo />
+                        </button>}
+                        {!isFav && <button className='icon-button' onClick={() => addToFav(story.id)}>
+                            <NotFavLogo />
+                        </button> }
+                </>
             </div>
-            <a href={story.url} target="_blank" rel="noreferrer" className="btn">Read more</a>
         </div>
     </div>
     )
