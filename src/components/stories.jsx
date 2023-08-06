@@ -10,7 +10,7 @@ const Stories = () => {
     useEffect(() => {
         GetTopStoryIds()
         .then(res => {
-            setStoryIds(res.data)
+            setStoryIds(res.data.splice(0, 20))
         })
         .catch(err => console.log("something went wrong", err))
     }, [])
@@ -21,7 +21,7 @@ const Stories = () => {
             <h1>Top stories</h1>
         </div>
         <div className='stories-container'>
-            {storyIds.map(id => <Story key = {id} storyId = {id}/>)}
+            {storyIds.map(id => <Story storyId = {id}/>)}
         </div>
         </>
     )

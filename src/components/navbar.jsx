@@ -2,7 +2,7 @@ import {NavLink} from 'react-router-dom'
 import './navbar.css'
 import {ReactComponent as Hamburger} from '../img/hamburger.svg';
 import {ReactComponent as BatmanLogo} from '../img/batman.svg';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 import { FavoriteIDsContext } from './context';
 
 const Navbar = () => {
@@ -11,8 +11,6 @@ const Navbar = () => {
     const handleShowNavbar = () => {
       setShowNavbar(!showNavbar);
     };
-
-    useEffect(() => console.log("seri da", favIds), [favIds])
 
     return (
         <nav className="navbar">

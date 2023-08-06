@@ -8,20 +8,19 @@ import {ReactComponent as FavLogo} from '../img/fav-selected.svg';
 import { FavoriteIDsContext } from './context';
 
 
-const Story = (props) => {
+const Story = ({storyId}) => {
     const [story, setStory] = useState({});
     const [favIds, setFavIds] = useContext(FavoriteIDsContext)
     const [isFav, setIsFav] = useState();
     useEffect(() => {
-        GetItemById(props.storyId)
+        GetItemById(storyId)
         .then(res => {
-            console.log(res.data)
             setStory(res.data)
         })
         .catch(err => console.log("something went wrong", err))
-    }, [props])
+    }, [storyId])
 
-    useEffect(() => setIsFav(favIds.includes(props.storyId)), [props, favIds])
+    useEffect(() => setIsFav(favIds.includes(storyId)), [storyId, favIds])
 
     const removeFromFav = (id) => {
         const filteredIDs = favIds.filter(i => i !== id)
@@ -48,10 +47,10 @@ const Story = (props) => {
                 <>
                 {isFav && <button className='icon-button' onClick={ () => removeFromFav(story.id)}>
                             <FavLogo />
-                        </button>}
-                        {!isFav && <button className='icon-button' onClick={() => addToFav(story.id)}>
-                            <NotFavLogo />
-                        </button> }
+                </button>}
+                {!isFav && <button className='icon-button' onClick={() => addToFav(story.id)}>
+                    <NotFavLogo />
+                </button> }
                 </>
             </div>
         </div>
