@@ -1,12 +1,8 @@
 import React from "react";
 import App from "../../App";
 import {setupServer} from 'msw/node'
-import {rest, act} from 'msw'
+import {rest} from 'msw'
 import { render, screen } from "@testing-library/react";
-
-
-const wait = async () => () => new Promise((resolve) => setTimeout(resolve, 1000));
-
 
 const server = setupServer(
     rest.get('https://hacker-news.firebaseio.com/v0/item/123.json', async (req, res, ctx) => {
